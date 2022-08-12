@@ -7,7 +7,7 @@ def is_valid(number):
     return number.isdigit() and right_border.isdigit() and int(number) in range(1, int(right_border) + 1)
 
 
-def is_game():
+def game():
     print('Введите правую границу диапазона (натуральное число):')
     global right_border
     right_border = input()
@@ -33,7 +33,7 @@ def is_game():
                 break
 
 
-def is_repeat_game():
+def repeat_game():
     while True:
         print('Сыграем ещё разок?', 'Ответьте "ДА" или "НЕТ"', sep='\n')
         answer = input()
@@ -46,6 +46,6 @@ def is_repeat_game():
             continue
 
 
-print('Добро пожаловать в числовую угадайку!')
-is_game()
-is_repeat_game()
+print('Добро пожаловать в числовую угадайку!', '\n')
+game()
+repeat_game()
