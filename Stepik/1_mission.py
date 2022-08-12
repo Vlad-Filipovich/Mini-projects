@@ -10,9 +10,15 @@ def is_valid(number):
 def game():
     print('Введите правую границу диапазона (натуральное число):')
     global right_border
-    right_border = input()
-    n = randint(1, int(right_border))
-    count = 1
+    while True:
+        right_border = input()
+        if not int(right_border.isdigit()):
+            print('Что-то не так! Скорее всего Вы указали не натуральное число, попробуйте ещё раз!')
+            continue
+        else:
+            n = randint(1, int(right_border))
+            count = 1
+            break
     while True:
         print('Введите число от 1 до', right_border, 'включительно:')
         num = input()
