@@ -2,8 +2,6 @@
 
 from random import randint
 
-print('Добро пожаловать в числовую угадайку')
-
 
 def is_valid(number):
     return number.isdigit() and right_border.isdigit() and int(number) in range(1, int(right_border) + 1)
@@ -16,7 +14,6 @@ def is_game():
     n = randint(1, int(right_border))
     count = 1
     while True:
-        print()
         print('Введите число от 1 до', right_border, 'включительно:')
         num = input()
         if not is_valid(num):
@@ -49,5 +46,6 @@ def is_repeat_game():
             continue
 
 
+print('Добро пожаловать в числовую угадайку!')
 is_game()
 is_repeat_game()
