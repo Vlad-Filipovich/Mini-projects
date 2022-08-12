@@ -6,18 +6,21 @@ print('Добро пожаловать в числовую угадайку')
 
 
 def is_valid(number):
-    return number.isdigit() and int(number) in range(1, 101)
+    return number.isdigit() and right_border.isdigit() and int(number) in range(1, int(right_border) + 1)
 
 
 def is_game():
-    n = randint(1, 100)
+    print('Введите правую границу диапазона (натуральное число):')
+    global right_border
+    right_border = input()
+    n = randint(1, int(right_border))
     count = 1
     while True:
         print()
-        print('Введите число от 1 до 100 (включительно):')
+        print('Введите число от 1 до', right_border, 'включительно:')
         num = input()
         if not is_valid(num):
-            print('А может быть все-таки введем целое число от 1 до 100?')
+            print('Что-то не так!', 'Возможно правая граница указана неверно или число вне диапозона.', sep='\n')
         else:
             num = int(num)
             if num < n:
